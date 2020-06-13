@@ -1,0 +1,9 @@
+{
+  "name": "lightningsdk/sitemanager-blog",
+  "type": "library",
+  "description": "Makes blog multisite compatible.",
+  "version": "1.0.0",
+  "requires": [
+    "lightningsdk/sitemanager"
+  ]
+}
