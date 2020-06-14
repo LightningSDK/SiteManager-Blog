@@ -11,8 +11,7 @@ return [
         ],
     ],
     'classes' => [
-        \lightningsdk\blog\Model\Blog::class => \lightningsdk\sitemanager_blog\Model\Blog::class,
-        \lightningsdk\blog\Model\Post::class => \lightningsdk\sitemanager_blog\Model\Post::class,
+        lightningsdk\blog\Model\Post::class => lightningsdk\sitemanager_blog\Model\Post::class,
     ],
     'modules' => [
         'include' => [

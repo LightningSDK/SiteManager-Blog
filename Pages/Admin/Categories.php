@@ -1,10 +1,10 @@
 <?php
 
-namespace Source\SiteAdmin;
+namespace lightningsdk\sitemanager_blog\Pages\Admin;
 
-use Source\Model\Site;
+use lightningsdk\sitemanager\Model\Site;
 
-class Categories extends \lightningsdk\core\Pages\Categories {
+class Categories extends \lightningsdk\blog\Pages\Categories {
     protected function initSettings() {
         parent::initSettings();
         $site = Site::getInstance();

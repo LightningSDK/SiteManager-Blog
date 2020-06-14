@@ -3,8 +3,8 @@
 namespace lightningsdk\sitemanager_blog\Pages\Admin;
 
 use lightningsdk\core\Tools\ClientUser;
-use Source\Model\Permissions;
-use Source\Model\Site;
+use lightningsdk\core\Model\Permissions;
+use lightningsdk\sitemanager\Model\Site;
 
 class Posts extends \lightningsdk\blog\Pages\Admin\Posts {
 
