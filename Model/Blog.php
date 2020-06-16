@@ -1,11 +1,12 @@
 <?php
 
-namespace Source\Model;
+namespace lightningsdk\sitemanager_blog\Model;
 
 use lightningsdk\blog\Model\BlogOverridable;
 use lightningsdk\blog\Model\Post;
 use lightningsdk\core\Tools\Configuration;
 use lightningsdk\core\Tools\Database;
+use lightningsdk\sitemanager\Model\Site;
 
 class Blog extends BlogOverridable {
     public function getAuthorID($search_value) {
