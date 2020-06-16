@@ -6,21 +6,10 @@ use lightningsdk\core\Tools\Database;
 use lightningsdk\sitemanager\Model\Site;
 
 class Post extends \lightningsdk\blog\Model\PostOverridable {
-    public static function loadPosts($where = [], $join = [], $limit = '') {
-        $where['blog.site_id'] = Site::getInstance()->id;
-        return Database::getInstance()->selectAll(
-            [
-                'from' => static::TABLE,
-                'join' => array_merge($join, static::joinAuthorCatTables()),
-            ],
-            $where,
-            [
-                static::TABLE . '.*',
-                'blog_author.*',
-                'categories' => ['expression' => 'GROUP_CONCAT(blog_blog_category.cat_id)']
-            ],
-            'GROUP BY ' . static::TABLE . '.blog_id ORDER BY time DESC ' . $limit
-        );
+    protected static function getQueryPost($blogOrCatWhere = [], $authorWhere = [], $limit = 0, $page = 0) {
+        $blogOrCatWhere['blog.site_id'] = Site::getInstance()->id;
+        $authorWhere['blog_author.site_id'] = Site::getInstance()->id;
+        return parent::getQueryPost($blogOrCatWhere, $authorWhere);
     }
 
     public static function getRecent() {
