@@ -20,13 +20,12 @@ class Blog extends BlogOverridable {
     public function loadContentByURL($url) {
         $this->isList = false;
         $site_id = Site::getInstance()->id;
-        $this->posts = Post::loadPosts([
-            'url' => $url,
-            '#OR' => [
-                ['blog_author.site_id' => $site_id],
-                ['blog_author.site_id' => null],
-            ]
-        ]);
+        $blogWhere['url'] = $url;
+        $authorWare['#OR'] = [
+            ['blog_author.site_id' => $site_id],
+            ['blog_author.site_id' => null],
+        ];
+        $this->posts = Post::loadPosts($blogWhere, $authorWare);
         if (!empty($this->posts)) {
             $this->id = $this->posts[0]['blog_id'];
         }
