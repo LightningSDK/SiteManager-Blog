@@ -2,13 +2,13 @@
 
 namespace lightningsdk\sitemanager_blog\Model;
 
-use lightningsdk\blog\Model\BlogOverridable;
+use lightningsdk\blog\Model\BlogCore;
 use lightningsdk\blog\Model\Post;
 use lightningsdk\core\Tools\Configuration;
 use lightningsdk\core\Tools\Database;
 use lightningsdk\sitemanager\Model\Site;
 
-class Blog extends BlogOverridable {
+class Blog extends BlogCore {
     public function getAuthorID($search_value) {
         return Database::getInstance()->selectField(
             'user_id',

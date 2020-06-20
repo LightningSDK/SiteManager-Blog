@@ -11,7 +11,7 @@ class Posts extends \lightningsdk\blog\Pages\Admin\Posts {
     public function hasAccess() {
         ClientUser::requireLogin();
         $user = ClientUser::getInstance();
-        return $user->hasPermission(Permissions::EDIT_BLOG) || $user->hasGroupPermission(Permissions::EDIT_BLOG);
+        return $user->hasPermission(Permissions::EDIT_BLOG);
     }
 
     protected function initSettings() {
