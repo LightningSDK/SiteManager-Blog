@@ -2,10 +2,11 @@
 
 namespace lightningsdk\sitemanager_blog\Model;
 
+use lightningsdk\blog\Model\PostCore;
 use lightningsdk\core\Tools\Database;
 use lightningsdk\sitemanager\Model\Site;
 
-class Post extends \lightningsdk\blog\Model\PostOverridable {
+class Post extends PostCore {
     protected static function getQueryPost($blogOrCatWhere = [], $authorWhere = [], $limit = 0, $page = 0) {
         $blogOrCatWhere['blog.site_id'] = Site::getInstance()->id;
         $authorWhere['blog_author.site_id'] = Site::getInstance()->id;
