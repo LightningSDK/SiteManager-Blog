@@ -25,6 +25,6 @@ class Posts extends \lightningsdk\blog\Pages\Admin\Posts {
         ];
 
         $this->accessControl['site_id'] = $site->id;
-        $this->links['blog_category']['accessControl'] = ['site_id' => $site->id];
+        $this->links['blog_category']['access_control'] = ['site_id' => $site->id];
     }
 }
